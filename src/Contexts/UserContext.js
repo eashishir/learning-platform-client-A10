@@ -7,20 +7,25 @@ import app from '../firebase/firebase.config';
 
 const UserContext = ({children}) => {
     const [user, setUser] = useState(null);
+    const [loading,setLoading] = useState(true);
 
     const createUser = (email,password) =>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
     const LogIn = (email,password) =>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,password)
     }
 
     const LogOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
     const googleProviderLogin = (provider) =>{
+        setLoading(true);
         return signInWithPopup(auth,provider);
 
     };
@@ -30,11 +35,12 @@ const UserContext = ({children}) => {
     useEffect (() =>{
         const unSubscribe = onAuthStateChanged(auth, currentUser=> {
             setUser(currentUser);
+            setLoading(false);
         });
         return () => unSubscribe ();
     },[])
 
-    const authInfo = {user,createUser,LogIn,LogOut,googleProviderLogin};
+    const authInfo = {user,loading, createUser,LogIn,LogOut,googleProviderLogin};
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
