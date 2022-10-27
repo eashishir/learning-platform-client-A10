@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import img1 from '../../../assets/brands/7-JavaScript-Concepts-That-Every-Developer-Must-Know.jpg'
 import img2 from '../../../assets/brands/pic4.jpeg'
 import img3 from '../../../assets/brands/pic5.jpg'
@@ -55,7 +56,7 @@ const Home = () => {
                     Best Online Learning Platforms.
                     </Card.Text>
                     
-                    <Button variant="primary">Courses Available <FaArrowAltCircleRight></FaArrowAltCircleRight> </Button>
+                   <Link to ='/courses/:id'> <Button variant="primary">Courses Available <FaArrowAltCircleRight></FaArrowAltCircleRight> </Button></Link>
                     <Card.Footer className="text-muted mt-2">@eashishir</Card.Footer>
                 </Card.Body>
               

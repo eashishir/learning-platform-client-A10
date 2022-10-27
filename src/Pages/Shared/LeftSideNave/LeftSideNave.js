@@ -8,7 +8,7 @@ const LeftSideNave = () => {
 const [categories,setCategories] = useState([]);
 
 useEffect(() =>{
-    fetch('http://localhost:5000/js-categories')
+    fetch('https://my-assignment-server-10.vercel.app/js-categories')
     .then(res => res.json())
     .then(data => setCategories(data))
 },[])

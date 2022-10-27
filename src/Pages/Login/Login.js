@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
+// import swal from 'sweetalert';
 
 import './Login.css'
 
 const Login = () => {
+    const [passwordError, setPasswordError] = useState('');
     const {LogIn} =useContext(AuthContext);
     const navigate = useNavigate();
     const location =useLocation()
@@ -27,7 +29,19 @@ const Login = () => {
         form.reset();
         navigate(from, {replace:true});
        })
-       .catch(error => console.error(error))
+       .catch(error => {
+        console.error(error);
+        // const alert = error.message;
+        // swal({
+        //     title: "Try again!",
+            
+        //     icon: "success",
+        //     button: "Aww yiss!",
+        //   });
+       setPasswordError(error.message);
+          
+        
+    })
 
     }
     return (
@@ -45,7 +59,9 @@ const Login = () => {
                     <input type="password" name='password' required />
 
                 </div>
+                <p className='text-danger font-w-50'>{passwordError}</p>
                 <input className='btn-submit' type="submit" value="Login" />
+                
             </form>
             <p>New to JS SmartLearn?<Link to="/register">Create a new account</Link></p>
 
