@@ -33,7 +33,7 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
-                    <p>Light/Dark</p>
+                    <Nav.Link > Light/Dark </Nav.Link>
                         <label className="switch">
                             
                             <input type="checkbox"/>
