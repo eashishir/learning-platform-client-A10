@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { FaDollarSign } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Category from '../../Category/Category/Category';
 
@@ -21,7 +22,7 @@ useEffect(() =>{
         <ListGroup variant="flush">
             {
                 categories.map(Category =><ListGroup.Item key={Category.id}>
-                    <Link to={`/category/${Category.id}`}>{Category.name}</Link>
+                    <Link to={`/category/${Category.id}`}>{Category.name}<FaDollarSign></FaDollarSign> </Link>
                 </ListGroup.Item> )
             }
           
