@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { FaDollarSign, FaFileInvoiceDollar } from 'react-icons/fa';
+import { FaDollarSign, FaFileInvoiceDollar, FaHandPointRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 // import Card from 'react-bootstrap/Card';
@@ -17,7 +17,9 @@ const CourseCard = ({ course }) => {
             <Card.Body>
                 <Card.Title>{course.title}</Card.Title>
 
-                <Link to={`/category/${course.category_id}`}><Button variant="info">Go more Information <FaFileInvoiceDollar></FaFileInvoiceDollar> </Button></Link>
+                <Link to={`/category/${course.category_id}`}>
+                    <Button variant="info">Go more Information <FaHandPointRight></FaHandPointRight> 
+                    </Button></Link>
             </Card.Body>
 
         </Card>

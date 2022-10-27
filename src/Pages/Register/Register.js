@@ -24,7 +24,7 @@ const Register = () => {
      
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,photoURL,email,password);
+        console.log(name, photoURL, email, password);
      
 
 
@@ -34,7 +34,7 @@ const Register = () => {
             const user = result.user ;
             console.log(user);
             form.reset()
-            handleUpdateUserProfile(name,photoURL);
+            handleUpdateUserProfile(name, photoURL);
         })
 
         .catch(error => {
@@ -70,7 +70,7 @@ const Register = () => {
     const handleUpdateUserProfile = ( name , photoURL) => {
        const profile = {
         displayName : name ,
-        photoURL : photoURL,
+        photoURL : photoURL
        }
         updateProfile(profile)
         .then(() => {})
@@ -85,12 +85,12 @@ const Register = () => {
         <form onSubmit={handleRegister} >
             <div className='form-control'>
                 <label htmlFor='name'>Full Name</label>
-                <input type="text" name='name' required />
+                <input type="text" name="name" required />
 
             </div>
             <div className='form-control'>
                 <label htmlFor='photoURL'>Photo URL</label>
-                <input type="text" name='photoURL'  />
+                <input type="text" name="photoURL"  />
 
             </div>
             <div className='form-control'>

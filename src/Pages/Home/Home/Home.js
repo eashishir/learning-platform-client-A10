@@ -6,8 +6,9 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import img1 from '../../../assets/brands/7-JavaScript-Concepts-That-Every-Developer-Must-Know.jpg'
 import img2 from '../../../assets/brands/pic4.jpeg'
-import img3 from '../../../assets/brands/pic5.jpg'
+
 import img4 from '../../../assets/brands/welcome2.jpg'
+
 
 
 const Home = () => {
@@ -39,14 +40,7 @@ const Home = () => {
                             />
                          
                         </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block 100"
-                                src={img3}
-                                alt="Third slide"
-                            />
-                         
-                        </Carousel.Item>
+                       
                     </Carousel>
                 </div>
 
