@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
-// import swal from 'sweetalert';
+
 
 import './Login.css'
 
@@ -31,13 +31,7 @@ const Login = () => {
        })
        .catch(error => {
         console.error(error);
-        // const alert = error.message;
-        // swal({
-        //     title: "Try again!",
-            
-        //     icon: "success",
-        //     button: "Aww yiss!",
-        //   });
+      
        setPasswordError(error.message);
           
         
